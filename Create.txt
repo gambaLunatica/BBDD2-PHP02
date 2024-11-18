@@ -1,0 +1,27 @@
+create database 202122bd2LaLiga
+
+create table equips(
+	eqcodi   char(3) primary key,
+	eqnom    varchar(15),
+	eqestadi varchar(20)
+);
+
+alter table equips add eqvideo varchar(250);
+
+create table jugadors (
+	jucodi 	int primary key auto_increment,
+	junom	varchar(15),
+	jualias	varchar(15),
+	judorsal int,
+	jufoto varchar(10),
+	juequip char(3),
+	foreign key (juequip) references equips(eqcodi)
+);
+
+insert into equips (eqcodi,eqnom,eqestadi)
+values
+("ATM","Atletico","Wanda"),
+("RCM","Mallorqueta","Visit Mallorca"),
+("RMA","Real Madrid","Bernabeu");
+
+localhost/phpmyadmin/
